@@ -183,5 +183,6 @@ if __name__ == "__main__":
             if mean_dev_loss < best_loss:
                 path = f"./models/best_{model_name}.pt"
                 save_model(path, model_name, epoch+1, mean_train_loss, mean_dev_loss, model, optimizer)
+                best_loss = mean_dev_loss
     elif args.test:
         print("INFO: test")
